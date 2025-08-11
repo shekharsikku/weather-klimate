@@ -1,9 +1,9 @@
-## **🌤 Klimate - Weather App**
+## **Klimate - Weather App**
 
 A modern, responsive weather application built with **React**, **Tailwind CSS**, **ShadCN UI**, and **React Query**.
 It fetches real-time weather data using the **OpenWeather API**.
 
-### 🚀 Features
+### **Features**
 
 - **Real-time weather data** using OpenWeather API.
 - **Search by city** to get current conditions.
@@ -12,7 +12,7 @@ It fetches real-time weather data using the **OpenWeather API**.
 - **Data fetching & caching** with React Query.
 - **Loading & error states** for smooth UX.
 
-### 🛠 Tech Stack
+### **Tech Stack**
 
 - **React** – Frontend framework
 - **Tailwind CSS** – Styling
@@ -20,49 +20,57 @@ It fetches real-time weather data using the **OpenWeather API**.
 - **React Query** – Server state management
 - **OpenWeather API** – Weather data source
 
-### 📦 Installation
+### **Quick Start**
 
-1. **Clone the repository**
+Ensure you have `Git, Node.js and npm` installed on your machine.
+
+### **Setup Instructions**
+
+**Clone the Repository**
 
 ```bash
-git clone https://github.com/shekharsikku/weather-klimate.git
-cd weather-app
+git clone https://github.com/shekharsikku/weather-klimate
+
+cd weather-klimate
 ```
 
-2. **Install dependencies**
+**Install Dependencies**
 
 ```bash
 npm install
 ```
 
-3. **Set up environment variables**
+**Set up Environment Variables**
 
 - Create a `.env` file in the root directory.
 - Add your OpenWeather API key:
 
 ```env
-VITE_OPENWEATHER_API_KEY=<your_api_key_here>
+VITE_OPENWEATHER_API_BASE_URL=<base_url>
+VITE_OPENWEATHER_API_GEO_URL=<geo_url>
+VITE_OPENWEATHER_API_KEY=<api_key>
 ```
 
-4. **Run the development server**
+**Run the Development Server**
 
 ```bash
 npm run dev
 ```
 
-### 🌍 API Usage
+### **API Usage**
 
-This project uses the **[OpenWeather API](https://openweathermap.org/api)**.
+#### This project uses the **[OpenWeather API](https://openweathermap.org/api)**.
+
 Sign up to get your free API key and place it in `.env`.
 
 Example request:
 
 ```
-https://api.openweathermap.org/data/2.5/weather?q=London&appid=YOUR_API_KEY
+https://api.openweathermap.org/data/2.5/weather?q=London&appid=<api_key>
 ```
 
-### 📄 License
+### **Developer License**
 
-This project is licensed under the **MIT License**.
+#### MIT License | Developed by [Shekhar Sharma](https://linkedin.com/in/shekharsikku)
 
 ---
