@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button";
 import {
   CommandDialog,
   CommandEmpty,
@@ -8,20 +8,22 @@ import {
   CommandItem,
   CommandList,
   CommandSeparator,
-} from "./ui/command";
+} from "@/components/ui/command";
 import { Clock, Loader2, Search, Star, XCircle } from "lucide-react";
 import { useLocationSearch } from "@/hooks/use-weather";
 import { useNavigate } from "react-router-dom";
 import { useSearchHistory } from "@/hooks/use-search-history";
 import { format } from "date-fns";
 import { useFavourite } from "@/hooks/use-favourite";
+import { useDebounce } from "@/lib/utils";
 
 const CitySearch = () => {
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
   const navigate = useNavigate();
 
-  const { data: locations, isLoading } = useLocationSearch(query);
+  const debouncedQuery = useDebounce(query, 1500);
+  const { data: locations, isLoading } = useLocationSearch(debouncedQuery);
   const { history, clearHistory, addToHistory } = useSearchHistory();
 
   const handleSelect = (cityData: string) => {
@@ -58,7 +60,7 @@ const CitySearch = () => {
           onValueChange={setQuery}
         />
         <CommandList>
-          {query.length > 2 && !isLoading && (
+          {query.length > 2 && query === debouncedQuery && !isLoading && (
             <CommandEmpty>No cities found.</CommandEmpty>
           )}
           {/* Favourites Section */}

@@ -1,2 +1,2 @@
-export { default as CityPage } from "./city-page";
-export { default as WeatherDashboard } from "./weather-dashboard";
+export { default as CityPage } from "@/pages/city-page";
+export { default as WeatherDashboard } from "@/pages/weather-dashboard";
